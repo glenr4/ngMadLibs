@@ -9,24 +9,39 @@ angular.module('myApp', [])
 		$scope.tediousTask = 'tedious task';
 		$scope.uselessSkill = 'useless skill'; 
 		$scope.adjective = 'adjective';
-		$scope.male = true;
+		$scope.male = "true";	// radio button needs a string not a boolean
 
-		console.log("initialisation complete");
+		// **********Need to call maleFemale() on page load**********
+
+
+
+
+
 
 		$scope.maleFemale = function(){
-			console.log("male: "+ (typeof $scope.male));
-			$scope.male = eval($scope.male);
-			console.log("male: "+ (typeof $scope.male));
-
+			
+			var isMale = eval($scope.male);
 			var heShe;
-			if ($scope.male){
-				$scope.heShe = 'he';
-				console.log("he");
-			} else {
-				$scope.heShe = 'she';
-				console.log("she");
-			};
 
-			// console.log("maleFemale() male: "+male+" heShe: "+$scope.heShe);
+			if (isMale){
+				$scope.maleName = 'Male name';
+				$scope.heShe = 'he';
+				
+
+
+
+
+			} else {
+				$scope.maleName = 'Female name';
+				$scope.heShe = 'she';
+				
+
+
+
+
+
+			};
 		};
+	
 	});
+
