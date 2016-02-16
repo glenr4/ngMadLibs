@@ -8,5 +8,23 @@ angular.module('myApp', [])
 		$scope.hugeNumber = 'huge number';
 		$scope.tediousTask = 'tedious task';
 		$scope.uselessSkill = 'useless skill'; 
-		$scope.adjective = 'adjective'; 
+		$scope.adjective = 'adjective';
+		$scope.male = true;
+
+		console.log("initialisation complete");
+
+		$scope.maleFemale = function(){
+			console.log("male: "+$scope.male);
+			
+			var heShe;
+			if ($scope.male){
+				$scope.heShe = 'he';
+				console.log("he");
+			} else {
+				$scope.heShe = 'she';
+				console.log("she");
+			};
+
+			// console.log("maleFemale() male: "+male+" heShe: "+$scope.heShe);
+		};
 	});
