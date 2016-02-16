@@ -5,7 +5,7 @@
 	<title>Mad Libs</title>
 
 	<link rel="stylesheet" href="css/style.css">
-	<script src="https://ajax.googleapis.com/ajax.libs/angularjs/1.4.9/angular.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
 </head>
 
 <body ng-app="">
@@ -19,30 +19,25 @@
 		<section class="border">
 			<h2>Provide the following words:</h2>
 			<div class="row">
-				<input type="text" ng-model="male-name" value="Male Name" class="border">
-				<input type="text" ng-model="dirty-task" value="Dirty Task" class="border">
-				<input type="text" ng-model="obnx-celeb" value="Obnoxious Celebrity" class="border">
+				<input type="text" ng-model="maleName" ng-init="maleName = 'Male name'" class="border">
+				<input type="text" ng-model="dirtyTask" ng-init="dirtyTask = 'dirty task'" class="border">
+				<input type="text" ng-model="obnxCeleb" ng-init="obnxCeleb = 'obnoxious celebrity'" class="border">
 			</div>
 			<div class="row">
-				<input type="text" ng-model="job-title" value="Job Title" class="border">
-				<input type="text" ng-model="celebrity" value="Celebrity" class="border">
-				<input type="text" ng-model="huge-number" value="Huge number" class="border">
+				<input type="text" ng-model="jobTitle" ng-init="jobTitle = 'Job Title'" class="border">
+				<input type="text" ng-model="celebrity" ng-init="celebrity = 'celebrity'" class="border">
+				<input type="text" ng-model="hugeNumber" ng-init="hugeNumber = 'huge number'" class="border">
 			</div>
 			<div class="row">
-				<input type="text" ng-model="tedious-task" value="Tedious Task" class="border">
-				<input type="text" ng-model="useless-skill" value="Useless Task" class="border">
-				<input type="text" ng-model="adjective" value="Adjective" class="border">
+				<input type="text" ng-model="tediousTask" ng-init="tediousTask = 'tedious task'" class="border">
+				<input type="text" ng-model="uselessSkill" ng-init="uselessSkill = 'useless skill'" class="border">
+				<input type="text" ng-model="adjective" ng-init="adjective = 'adjective'" class="border">
 			</div>
 		</section>
 		<section class="border">
-
-
-
-
-
-			{{female name}} was a {{job title}} who loved technology. Although she loved parts of her job, she absolutely hated  {{tedious task}} and {{dirty task}}. So, {{female_name}} met with her life mentor {{celebrity}} who told her to learn how to {{useless skill}} with Thinkful. Thinkful didn't offer a course on {{useless skill}} so she studied programming instead. 
+			<p>{{maleName}} was a {{jobTitle}} who loved technology. Although she loved parts of her job, she absolutely hated  {{tediousTask}} and {{dirtyTask}}. So, {{male-name}} met with her life mentor {{celebrity}} who told her to learn how to {{uselessSkill}} with Thinkful. Thinkful didn't offer a course on {{uselessSkill}} so she studied programming instead.</p>
 			 
-			What a great decision! With her new skills, {{female name}} built a(n) {{adjective}} robot named {{obnoxiuous celbertity}} that not only loved {{dirty task}} but did it {{huge number}} faster. 
+			<p>What a great decision! With her new skills, {{male-name}} built a(n) {{adjective}} robot named {{obnxCeleb}} that not only loved {{dirtyTask}} but did it {{hugeNumber}} faster.</p>
 		</section>
 	</div>
 </body>
