@@ -29,12 +29,16 @@ section {
 	padding: 10px 30px;
 }
 
-.row {
+.row-radio {
+	margin-left: 40px;
+}
+
+.row-text {
 	text-align: center;
 	margin-bottom: 20px;
 }
 
-input {
+input[type=text] {
 	margin: 0 10px;
 	width: 10em;
 	padding-left: 5px;

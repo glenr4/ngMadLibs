@@ -18,18 +18,21 @@
 		</header>
 		<section class="border">
 			<h2>Provide the following words:</h2>
-			<div class="row">
-				<!-- <input type="text" ng-model="maleName" ng-init="maleName = 'Male name'" class="border"> -->
+			<div class="row-radio">
+				<input type="radio" ng-model="male" ng-value="true">M
+				<input type="radio" ng-model="male" ng-value="false">F
+			</div>
+			<div class="row-text">
 				<input type="text" ng-model="maleName" class="border">
 				<input type="text" ng-model="dirtyTask" class="border">
 				<input type="text" ng-model="obnxCeleb" class="border">
 			</div>
-			<div class="row">
+			<div class="row-text">
 				<input type="text" ng-model="jobTitle" class="border">
 				<input type="text" ng-model="celebrity" class="border">
 				<input type="text" ng-model="hugeNumber" class="border">
 			</div>
-			<div class="row">
+			<div class="row-text">
 				<input type="text" ng-model="tediousTask" class="border">
 				<input type="text" ng-model="uselessSkill" class="border">
 				<input type="text" ng-model="adjective" class="border">
