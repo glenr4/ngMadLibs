@@ -14,8 +14,10 @@ angular.module('myApp', [])
 		console.log("initialisation complete");
 
 		$scope.maleFemale = function(){
-			console.log("male: "+$scope.male);
-			
+			console.log("male: "+ (typeof $scope.male));
+			$scope.male = eval($scope.male);
+			console.log("male: "+ (typeof $scope.male));
+
 			var heShe;
 			if ($scope.male){
 				$scope.heShe = 'he';
