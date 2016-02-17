@@ -11,37 +11,27 @@ angular.module('myApp', [])
 		$scope.adjective = 'adjective';
 		$scope.male = "true";	// radio button needs a string not a boolean
 
-		// **********Need to call maleFemale() on page load**********
-
-
-
-
-
-
+		// Swap between male and female terms
 		$scope.maleFemale = function(){
-			
 			var isMale = eval($scope.male);
 			var heShe;
+			var hisHer;
+			var himHer;
 
 			if (isMale){
 				$scope.maleName = 'Male name';
 				$scope.heShe = 'he';
-				
-
-
-
-
+				$scope.hisHer = 'his';
+				$scope.himHer = 'him';
 			} else {
 				$scope.maleName = 'Female name';
 				$scope.heShe = 'she';
-				
-
-
-
-
-
+				$scope.hisHer = 'her';
+				$scope.himHer = 'her';
 			};
 		};
-	
+		// Initialise variables
+		$scope.maleFemale();
 	});
+
 

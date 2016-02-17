@@ -48,6 +48,10 @@ input[type=text] {
 	height: 400px;
 }
 
+.row-radio p {
+	margin-bottom: 0px;
+}
+
 /*Styling*/
 .border {
 	border: 1px solid black;
