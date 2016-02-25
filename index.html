@@ -6,6 +6,7 @@
 
 	<link rel="stylesheet" href="css/style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-messages.js"></script>
 	<script src="js/app.js"></script>
 </head>
 
@@ -18,27 +19,39 @@
 		</header>
 		<section class="border">
 			<h2>Provide the following words:</h2>
-			<div class="row-radio">
-				<p>
-					<input type="radio" ng-model="male" value="true" ng-change="maleFemale()">M
-					<input type="radio" ng-model="male" value="false" ng-change="maleFemale()">F
-				</p>
-			</div>
-			<div class="row-text">
-				<input type="text" ng-model="maleName" class="border" placeholder={{maleNamePlace}}>
-				<input type="text" ng-model="dirtyTask" class="border" placeholder="dirty task">
-				<input type="text" ng-model="obnxCeleb" class="border"  placeholder="obnoxious celebrity">
-			</div>
-			<div class="row-text">
-				<input type="text" ng-model="jobTitle" class="border" placeholder="job title">
-				<input type="text" ng-model="celebrity" class="border"  placeholder="celebrity">
-				<input type="text" ng-model="hugeNumber" class="border" placeholder="huge number">
-			</div>
-			<div class="row-text">
-				<input type="text" ng-model="tediousTask" class="border"  placeholder="tedious task">
-				<input type="text" ng-model="uselessSkill" class="border" placeholder="useless skill">
-				<input type="text" ng-model="adjective" class="border"  placeholder="adjective">
-			</div>
+
+			<form name="userForm" novalidate ng-submit="submit()">
+				<div class="row-radio">
+					<p>
+						<input type="radio" ng-model="male" value="true" ng-change="maleFemale()">M
+						<input type="radio" ng-model="male" value="false" ng-change="maleFemale()">F
+					</p>
+				</div>
+				<div class="row-text">
+					<input type="text" name="maleName" required ng-model="maleName" class="border" placeholder={{maleNamePlace}}>
+					<input type="text" required ng-model="dirtyTask" class="border" placeholder="dirty task">
+					<input type="text" required ng-model="obnxCeleb" class="border"  placeholder="obnoxious celebrity">
+				</div>
+				<div class="row-text" ng-if="userForm.$submitted" ng-messages="userForm.maleName.$error">
+					<span class="error" ng-message="required">This field is required</span>
+					<!-- This would be better to update the placeholder text and change the colour to red -->
+
+				</div>
+				<div class="row-text">
+					<input type="text" required ng-model="jobTitle" class="border" placeholder="job title">
+					<input type="text" required ng-model="celebrity" class="border"  placeholder="celebrity">
+					<input type="number" required ng-minlength="6" ng-model="hugeNumber" class="border" placeholder="huge number">
+				</div>
+				<div class="row-text">
+					<input type="text" required ng-model="tediousTask" class="border"  placeholder="tedious task">
+					<input type="text" required ng-model="uselessSkill" class="border" placeholder="useless skill">
+					<input type="text" required ng-model="adjective" class="border"  placeholder="adjective">
+				</div>
+				<div>
+					<input type="submit" name="submit">
+				</div>
+			</form>
+
 		</section>
 		<section class="border" id="text-area">
 			<p><span class="u-line">{{maleName}}</span> was a <span class="u-line">{{jobTitle}}</span> who loved technology. Although {{heShe}} loved parts of {{hisHer}} job, {{heShe}} absolutely hated  <span class="u-line">{{tediousTask}}</span> and <span class="u-line">{{dirtyTask}}</span>. So, <span class="u-line">{{maleName}}</span> met with {{hisHer}} life mentor <span class="u-line">{{celebrity}}</span> who told {{himHer}} to learn <span class="u-line">{{uselessSkill}}</span> with Thinkful. Thinkful didn't offer a course on <span class="u-line">{{uselessSkill}}</span> so {{heShe}} studied programming instead.</p>

@@ -19,6 +19,14 @@ angular.module('myApp', [])
 				$scope.himHer = 'her';
 			};
 		};
+
+		// Submit
+		$scope.submit = function(){
+			// Process button click, show error if validation is not true
+
+		};
+
+
 		// Initialise variables
 		$scope.maleFemale();
 	});
