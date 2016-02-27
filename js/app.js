@@ -23,6 +23,9 @@ angular.module('myApp', [])
 		// Submit
 		$scope.submit = function(){
 			// Process button click, show error if validation is not true
+			if ($scope.userForm.$valid == false){
+				
+			}
 
 		};
 

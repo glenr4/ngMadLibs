@@ -48,6 +48,15 @@ input[type=text] {
 	margin-bottom: 0px;
 }
 
+.inputField {
+	display: inline-block;
+	list-style-type: none;
+}
+
+/*.inputFieldError {
+	display: inline-block;
+}*/
+
 /*Styling*/
 .border {
 	border: 1px solid black;

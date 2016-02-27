@@ -28,20 +28,32 @@
 					</p>
 				</div>
 				<div class="row-text">
-					<input type="text" name="maleName" required ng-model="maleName" class="border" placeholder={{maleNamePlace}}>
+					<ul class="inputField">
+						<li>
+							<input type="text" name="maleName" required ng-model="maleName" class="border" placeholder={{maleNamePlace}}>
+						</li>
+						<li>
+							<div class="inputFieldError" ng-if="userForm.$submitted" ng-messages="userForm.maleName.$error">
+								<p ng-message="required">This field is required</p>
+							</div>
+						</li>
+					</ul>
+
 					<input type="text" required ng-model="dirtyTask" class="border" placeholder="dirty task">
 					<input type="text" required ng-model="obnxCeleb" class="border"  placeholder="obnoxious celebrity">
 				</div>
-				<div class="row-text" ng-if="userForm.$submitted" ng-messages="userForm.maleName.$error">
-					<span class="error" ng-message="required">This field is required</span>
-					<!-- This would be better to update the placeholder text and change the colour to red -->
 
-				</div>
 				<div class="row-text">
-					<input type="text" required ng-model="jobTitle" class="border" placeholder="job title">
+					<div class="inputField">
+						<input type="text" name="jobTitle" required ng-model="jobTitle" class="border" placeholder="job title">
+						<span class="inputFieldError" ng-if="userForm.$submitted" ng-messages="userForm.jobTitle.$error">
+							<p ng-message="required">This field is required</p>
+						</span>
+					</div>
 					<input type="text" required ng-model="celebrity" class="border"  placeholder="celebrity">
 					<input type="number" required ng-minlength="6" ng-model="hugeNumber" class="border" placeholder="huge number">
 				</div>
+
 				<div class="row-text">
 					<input type="text" required ng-model="tediousTask" class="border"  placeholder="tedious task">
 					<input type="text" required ng-model="uselessSkill" class="border" placeholder="useless skill">
