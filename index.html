@@ -17,7 +17,7 @@
 			<img src="images/ng-mad-libs-logo.png" alt="Mad Libs" id="logo">
 			<h1>Silly Story</h1>
 		</header>
-		<section class="border">
+		<section class="border" ng-show="!inputValid">
 			<h2>Provide the following words:</h2>
 
 			<form name="userForm" novalidate ng-submit="submit()">
@@ -31,7 +31,7 @@
 				<div class="row-text">
 					<ul class="inputField">
 						<li>
-							<input type="text" name="maleName" required ng-model="maleName" class="border" placeholder={{maleNamePlace}}>
+							<input type="text" name="maleName" required ng-model="maleName" class="border" placeholder={{maleNamePlace}} ng-class="{ 'input-error': userForm.$submitted && userForm.maleName.$invalid }">
 						</li>
 						<li>
 							<div class="inputFieldError" ng-messages="userForm.maleName.$error" ng-if="userForm.$submitted">
@@ -42,7 +42,7 @@
 
 					<ul class="inputField">
 						<li>
-							<input type="text" name="dirtyTask" required ng-model="dirtyTask" class="border" placeholder="dirty task">
+							<input type="text" name="dirtyTask" required ng-model="dirtyTask" class="border" placeholder="dirty task" ng-class="{ 'input-error': userForm.$submitted && userForm.dirtyTask.$invalid }">
 						</li>
 						<li>
 							<div class="inputFieldError" ng-if="userForm.$submitted" ng-messages="userForm.dirtyTask.$error">
@@ -53,7 +53,7 @@
 
 					<ul class="inputField">
 						<li>
-							<input type="text" name="obnxCeleb" required ng-model="obnxCeleb" class="border"  placeholder="obnoxious celebrity">
+							<input type="text" name="obnxCeleb" required ng-model="obnxCeleb" class="border"  placeholder="obnoxious celebrity" ng-class="{ 'input-error': userForm.$submitted && userForm.obnxCeleb.$invalid }">
 						</li>
 						<li>
 							<div class="inputFieldError" ng-if="userForm.$submitted" ng-messages="userForm.obnxCeleb.$error">
@@ -67,7 +67,7 @@
 				<div class="row-text">
 					<ul class="inputField">
 						<li>
-							<input type="text" name="jobTitle" required ng-model="jobTitle" class="border" placeholder="job title">
+							<input type="text" name="jobTitle" required ng-model="jobTitle" class="border" placeholder="job title" ng-class="{ 'input-error': userForm.$submitted && userForm.jobTitle.$invalid }">
 						</li>
 						<li>
 							<div class="inputFieldError" ng-if="userForm.$submitted" ng-messages="userForm.jobTitle.$error">
@@ -78,7 +78,7 @@
 
 					<ul class="inputField">
 						<li>
-							<input type="text" name="celebrity" required ng-model="celebrity" class="border"  placeholder="celebrity">
+							<input type="text" name="celebrity" required ng-model="celebrity" class="border"  placeholder="celebrity" ng-class="{ 'input-error': userForm.$submitted && userForm.celebrity.$invalid }">
 						</li>
 						<li>
 							<div class="inputFieldError" ng-if="userForm.$submitted" ng-messages="userForm.celebrity.$error">
@@ -89,7 +89,7 @@
 
 					<ul class="inputField">
 						<li>
-							<input type="number" name="hugeNumber" width="50px" required ng-minlength="6" ng-model="hugeNumber" class="border" placeholder="huge number">
+							<input type="number" name="hugeNumber" width="50px" required ng-minlength="6" ng-model="hugeNumber" class="border" placeholder="huge number" ng-class="{ 'input-error': userForm.$submitted && userForm.hugeNumber.$invalid }">
 						</li>
 						<li>
 							<div class="inputFieldError" ng-if="userForm.$submitted" ng-messages="userForm.hugeNumber.$error">
@@ -105,7 +105,7 @@
 				<div class="row-text">
 					<ul class="inputField">
 						<li>
-							<input type="text" name="tediousTask" required ng-model="tediousTask" class="border"  placeholder="tedious task">
+							<input type="text" name="tediousTask" required ng-model="tediousTask" class="border"  placeholder="tedious task" ng-class="{ 'input-error': userForm.$submitted && userForm.tediousTask.$invalid }">
 						</li>
 						<li>
 							<div class="inputFieldError" ng-if="userForm.$submitted" ng-messages="userForm.tediousTask.$error">
@@ -116,7 +116,7 @@
 
 					<ul class="inputField">
 						<li>
-							<input type="text" name="uselessSkill" required ng-model="uselessSkill" class="border" placeholder="useless skill">
+							<input type="text" name="uselessSkill" required ng-model="uselessSkill" class="border" placeholder="useless skill" ng-class="{ 'input-error': userForm.$submitted && userForm.uselessSkill.$invalid }">
 						</li>
 						<li>
 							<div class="inputFieldError" ng-if="userForm.$submitted" ng-messages="userForm.uselessSkill.$error">
@@ -127,7 +127,7 @@
 
 					<ul class="inputField">
 						<li>
-							<input type="text" name="adjective" required ng-model="adjective" class="border"  placeholder="adjective">
+							<input type="text" name="adjective" required ng-model="adjective" class="border"  placeholder="adjective" ng-class="{ 'input-error': userForm.$submitted && userForm.adjective.$invalid }">
 						</li>
 						<li>
 							<div class="inputFieldError" ng-if="userForm.$submitted" ng-messages="userForm.adjective.$error">
@@ -143,8 +143,8 @@
 				</div>
 			</form>
 			<!-- Temporary code -->
-			inputValid: {{inputValid}}
-			<p>Form: <pre>{{userForm | json}}</pre></p>
+			<!-- inputValid: {{inputValid}} -->
+			<!-- <p>Form: <pre>{{userForm | json}}</pre></p> -->
 		</section>
 
 		<section class="border" id="text-area" ng-show="inputValid">

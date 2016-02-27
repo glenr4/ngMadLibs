@@ -35,7 +35,7 @@ section {
 
 .row-text {
 	text-align: center;
-	min-height: 50px;
+	min-height: 67px;
 }
 
 .row-text ul {
@@ -88,6 +88,10 @@ h1,h2,h3,h4,h5,h6,p,li {
 	font-family: arial;
 }
 
-.ng-invalid.ng-submitted input {
+/*.ng-invalid.ng-submitted input {
+	border: solid 1px red;
+}*/
+
+.input-error {
 	border: solid 1px red;
 }
