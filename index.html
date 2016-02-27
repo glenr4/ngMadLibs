@@ -34,7 +34,7 @@
 							<input type="text" name="maleName" required ng-model="maleName" class="border" placeholder={{maleNamePlace}}>
 						</li>
 						<li>
-							<div class="inputFieldError" ng-if="userForm.$submitted" ng-messages="userForm.maleName.$error">
+							<div class="inputFieldError" ng-messages="userForm.maleName.$error" ng-if="userForm.$submitted">
 								<p ng-message="required">This field is required</p>
 							</div>
 						</li>
@@ -137,6 +137,7 @@
 					</ul>					
 				</div>
 				<hr>
+				<!-- Submit button -->
 				<div class="button">
 					<button type="submit" name="submit">Generate My Mad Lib</button>
 				</div>

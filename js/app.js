@@ -1,4 +1,4 @@
-angular.module('myApp', [])
+angular.module('myApp', ['ngMessages'])
 	.controller('myCtrl', function($scope){
 
 		$scope.male = "true";	// radio button needs a string not a boolean
