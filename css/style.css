@@ -53,9 +53,12 @@ input[type=text] {
 	list-style-type: none;
 }
 
-/*.inputFieldError {
-	display: inline-block;
-}*/
+.inputFieldError p {
+	color: red;
+	font-size: 0.75em;
+	margin: 2px 0 0 10px;
+	text-align: left;
+}
 
 /*Styling*/
 .border {
@@ -73,4 +76,8 @@ h1 {
 
 h1,h2,h3,h4,h5,h6,p,li {
 	font-family: arial;
+}
+
+.ng-invalid.ng-submitted input {
+	border: solid 1px red;
 }
