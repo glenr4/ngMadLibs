@@ -22,9 +22,12 @@ angular.module('myApp', [])
 
 		// Submit
 		$scope.submit = function(){
+			console.log("Submit!");
 			// Process button click, show error if validation is not true
 			if ($scope.userForm.$valid == false){
-				
+				$scope.inputValid = "";
+			} else {
+				$scope.inputValid = "true";
 			}
 
 		};
@@ -32,6 +35,7 @@ angular.module('myApp', [])
 
 		// Initialise variables
 		$scope.maleFemale();
+		$scope.inputValid = "";
 	});
 
 

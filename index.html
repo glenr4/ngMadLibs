@@ -27,6 +27,7 @@
 						<input type="radio" ng-model="male" value="false" ng-change="maleFemale()">F
 					</p>
 				</div>
+				<!-- First row -->
 				<div class="row-text">
 					<ul class="inputField">
 						<li>
@@ -39,33 +40,113 @@
 						</li>
 					</ul>
 
-					<input type="text" required ng-model="dirtyTask" class="border" placeholder="dirty task">
-					<input type="text" required ng-model="obnxCeleb" class="border"  placeholder="obnoxious celebrity">
+					<ul class="inputField">
+						<li>
+							<input type="text" name="dirtyTask" required ng-model="dirtyTask" class="border" placeholder="dirty task">
+						</li>
+						<li>
+							<div class="inputFieldError" ng-if="userForm.$submitted" ng-messages="userForm.dirtyTask.$error">
+								<p ng-message="required">This field is required</p>
+							</div>
+						</li>
+					</ul>
+
+					<ul class="inputField">
+						<li>
+							<input type="text" name="obnxCeleb" required ng-model="obnxCeleb" class="border"  placeholder="obnoxious celebrity">
+						</li>
+						<li>
+							<div class="inputFieldError" ng-if="userForm.$submitted" ng-messages="userForm.obnxCeleb.$error">
+								<p ng-message="required">This field is required</p>
+							</div>
+						</li>
+					</ul>					
 				</div>
 
+				<!-- Second row -->
 				<div class="row-text">
-					<div class="inputField">
-						<input type="text" name="jobTitle" required ng-model="jobTitle" class="border" placeholder="job title">
-						<span class="inputFieldError" ng-if="userForm.$submitted" ng-messages="userForm.jobTitle.$error">
-							<p ng-message="required">This field is required</p>
-						</span>
-					</div>
-					<input type="text" required ng-model="celebrity" class="border"  placeholder="celebrity">
-					<input type="number" required ng-minlength="6" ng-model="hugeNumber" class="border" placeholder="huge number">
+					<ul class="inputField">
+						<li>
+							<input type="text" name="jobTitle" required ng-model="jobTitle" class="border" placeholder="job title">
+						</li>
+						<li>
+							<div class="inputFieldError" ng-if="userForm.$submitted" ng-messages="userForm.jobTitle.$error">
+								<p ng-message="required">This field is required</p>
+							</div>
+						</li>
+					</ul>
+
+					<ul class="inputField">
+						<li>
+							<input type="text" name="celebrity" required ng-model="celebrity" class="border"  placeholder="celebrity">
+						</li>
+						<li>
+							<div class="inputFieldError" ng-if="userForm.$submitted" ng-messages="userForm.celebrity.$error">
+								<p ng-message="required">This field is required</p>
+							</div>
+						</li>
+					</ul>
+
+					<ul class="inputField">
+						<li>
+							<input type="number" name="hugeNumber" width="50px" required ng-minlength="6" ng-model="hugeNumber" class="border" placeholder="huge number">
+						</li>
+						<li>
+							<div class="inputFieldError" ng-if="userForm.$submitted" ng-messages="userForm.hugeNumber.$error">
+								<p ng-message="required">This field is required</p>
+								<p ng-message="minlength">Larger please!</p>
+								<!-- Why do both errors show here? -->
+							</div>
+						</li>
+					</ul>					
 				</div>
 
+				<!-- Third row -->
 				<div class="row-text">
-					<input type="text" required ng-model="tediousTask" class="border"  placeholder="tedious task">
-					<input type="text" required ng-model="uselessSkill" class="border" placeholder="useless skill">
-					<input type="text" required ng-model="adjective" class="border"  placeholder="adjective">
+					<ul class="inputField">
+						<li>
+							<input type="text" name="tediousTask" required ng-model="tediousTask" class="border"  placeholder="tedious task">
+						</li>
+						<li>
+							<div class="inputFieldError" ng-if="userForm.$submitted" ng-messages="userForm.tediousTask.$error">
+								<p ng-message="required">This field is required</p>
+							</div>
+						</li>
+					</ul>
+
+					<ul class="inputField">
+						<li>
+							<input type="text" name="uselessSkill" required ng-model="uselessSkill" class="border" placeholder="useless skill">
+						</li>
+						<li>
+							<div class="inputFieldError" ng-if="userForm.$submitted" ng-messages="userForm.uselessSkill.$error">
+								<p ng-message="required">This field is required</p>
+							</div>
+						</li>
+					</ul>
+
+					<ul class="inputField">
+						<li>
+							<input type="text" name="adjective" required ng-model="adjective" class="border"  placeholder="adjective">
+						</li>
+						<li>
+							<div class="inputFieldError" ng-if="userForm.$submitted" ng-messages="userForm.adjective.$error">
+								<p ng-message="required">This field is required</p>
+							</div>
+						</li>
+					</ul>					
 				</div>
-				<div>
-					<input type="submit" name="submit">
+				<hr>
+				<div class="button">
+					<button type="submit" name="submit">Generate My Mad Lib</button>
 				</div>
 			</form>
-
+			<!-- Temporary code -->
+			inputValid: {{inputValid}}
+			<p>Form: <pre>{{userForm | json}}</pre></p>
 		</section>
-		<section class="border" id="text-area">
+
+		<section class="border" id="text-area" ng-show="inputValid">
 			<p><span class="u-line">{{maleName}}</span> was a <span class="u-line">{{jobTitle}}</span> who loved technology. Although {{heShe}} loved parts of {{hisHer}} job, {{heShe}} absolutely hated  <span class="u-line">{{tediousTask}}</span> and <span class="u-line">{{dirtyTask}}</span>. So, <span class="u-line">{{maleName}}</span> met with {{hisHer}} life mentor <span class="u-line">{{celebrity}}</span> who told {{himHer}} to learn <span class="u-line">{{uselessSkill}}</span> with Thinkful. Thinkful didn't offer a course on <span class="u-line">{{uselessSkill}}</span> so {{heShe}} studied programming instead.</p>
 			 
 			<p>What a great decision! With {{hisHer}} new skills, <span class="u-line">{{maleName}}</span> built a <span class="u-line">{{adjective}}</span> robot named <span class="u-line">{{obnxCeleb}}</span> that not only loved <span class="u-line">{{dirtyTask}}</span> but did it <span class="u-line">{{hugeNumber}}</span> times faster.</p>
