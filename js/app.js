@@ -47,6 +47,10 @@ angular.module('myApp', ['ngMessages'])
 			$scope.uselessSkill = "";
 			$scope.adjective = "";
 
+			// Reset radio button
+			$scope.male = "true";
+			$scope.maleFemale();
+			
 			// Reset form
 			$scope.userForm.$setPristine();
 			$scope.userForm.$setUntouched();
