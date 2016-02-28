@@ -142,16 +142,26 @@
 					<button type="submit" name="submit">Generate My Mad Lib</button>
 				</div>
 			</form>
-			<!-- Temporary code -->
-			<!-- inputValid: {{inputValid}} -->
-			<!-- <p>Form: <pre>{{userForm | json}}</pre></p> -->
 		</section>
 
 		<section class="border" id="text-area" ng-show="inputValid">
 			<p><span class="u-line">{{maleName}}</span> was a <span class="u-line">{{jobTitle}}</span> who loved technology. Although {{heShe}} loved parts of {{hisHer}} job, {{heShe}} absolutely hated  <span class="u-line">{{tediousTask}}</span> and <span class="u-line">{{dirtyTask}}</span>. So, <span class="u-line">{{maleName}}</span> met with {{hisHer}} life mentor <span class="u-line">{{celebrity}}</span> who told {{himHer}} to learn <span class="u-line">{{uselessSkill}}</span> with Thinkful. Thinkful didn't offer a course on <span class="u-line">{{uselessSkill}}</span> so {{heShe}} studied programming instead.</p>
 			 
 			<p>What a great decision! With {{hisHer}} new skills, <span class="u-line">{{maleName}}</span> built a <span class="u-line">{{adjective}}</span> robot named <span class="u-line">{{obnxCeleb}}</span> that not only loved <span class="u-line">{{dirtyTask}}</span> but did it <span class="u-line">{{hugeNumber}}</span> times faster.</p>
+			<hr>
+			<!-- Reset button -->
+			<div class="button">
+				<button name="reset" ng-click="reset()">Reset</button>
+			</div>			
 		</section>
 	</div>
+				<!-- Temporary code -->
+			<!-- inputValid: {{inputValid}} -->
+						<!-- Reset button -->
+			<div class="button">
+				<button ng-click="reset()">Reset</button>
+				
+			</div>	
+			<p>Form: <pre>{{userForm | json}}</pre></p>
 </body>
 </html>
