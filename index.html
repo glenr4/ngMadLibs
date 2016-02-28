@@ -95,7 +95,6 @@
 							<div class="inputFieldError" ng-if="userForm.$submitted" ng-messages="userForm.hugeNumber.$error">
 								<p ng-message="required">This field is required</p>
 								<p ng-message="minlength">Larger please!</p>
-								<!-- Why do both errors show here? -->
 							</div>
 						</li>
 					</ul>					
@@ -155,13 +154,5 @@
 			</div>			
 		</section>
 	</div>
-				<!-- Temporary code -->
-			<!-- inputValid: {{inputValid}} -->
-						<!-- Reset button -->
-			<div class="button">
-				<button ng-click="reset()">Reset</button>
-				
-			</div>	
-			<p>Form: <pre>{{userForm | json}}</pre></p>
 </body>
 </html>
