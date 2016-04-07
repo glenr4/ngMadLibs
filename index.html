@@ -18,7 +18,7 @@
 			<img src="images/ng-mad-libs-logo.png" alt="Mad Libs" id="logo">
 			<h1>Silly Story</h1>
 		</header>
-		<section class="border" id="form-area" ng-if="!inputValid">
+		<section class="border" id="form-area" ng-show="!inputValid">
 			<h2>Provide the following words:</h2>
 
 			<form name="userForm" novalidate ng-submit="submit()">
@@ -144,7 +144,7 @@
 			</form>
 		</section>
 
-		<section class="border" id="text-area" ng-if="inputValid">
+		<section class="border" id="text-area" ng-show="inputValid">
 			<p><span class="u-line">{{maleName}}</span> was a <span class="u-line">{{jobTitle}}</span> who loved technology. Although {{heShe}} loved parts of {{hisHer}} job, {{heShe}} absolutely hated  <span class="u-line">{{tediousTask}}</span> and <span class="u-line">{{dirtyTask}}</span>. So, <span class="u-line">{{maleName}}</span> met with {{hisHer}} life mentor <span class="u-line">{{celebrity}}</span> who told {{himHer}} to learn <span class="u-line">{{uselessSkill}}</span> with Thinkful. Thinkful didn't offer a course on <span class="u-line">{{uselessSkill}}</span> so {{heShe}} studied programming instead.</p>
 			 
 			<p>What a great decision! With {{hisHer}} new skills, <span class="u-line">{{maleName}}</span> built a <span class="u-line">{{adjective}}</span> robot named <span class="u-line">{{obnxCeleb}}</span> that not only loved <span class="u-line">{{dirtyTask}}</span> but did it <span class="u-line">{{hugeNumber}}</span> times faster.</p>

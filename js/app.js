@@ -22,20 +22,16 @@ angular.module('myApp', ['ngMessages', 'ngAnimate'])
 
 		// Submit
 		$scope.submit = function(){
-			// console.log("Submit!");
 			// Process button click, show error if validation is not true
-			if (userForm.$valid == false){
+			if ($scope.userForm.$valid == false){
 				$scope.inputValid = "";
 			} else {
 				$scope.inputValid = "true";
-			}
-// $scope.inputValid = "true";			
+			}		
 		};
 
 		// Reset form
 		$scope.reset = function(){
-			console.log("reset!");
-
 			// Clear input values
 			$scope.maleName = "";
 			$scope.dirtyTask = "";
@@ -52,8 +48,8 @@ angular.module('myApp', ['ngMessages', 'ngAnimate'])
 			$scope.maleFemale();
 			
 			// Reset form
-			userForm.$setPristine();
-			userForm.$setUntouched();
+			$scope.userForm.$setPristine();
+			$scope.userForm.$setUntouched();
 
 			// Show input form again
 			$scope.inputValid = "";
