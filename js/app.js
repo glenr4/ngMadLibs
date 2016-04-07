@@ -1,4 +1,4 @@
-angular.module('myApp', ['ngMessages'])
+angular.module('myApp', ['ngMessages', 'ngAnimate'])
 	.controller('myCtrl', function($scope){
 
 		$scope.male = "true";	// radio button needs a string not a boolean
@@ -22,14 +22,14 @@ angular.module('myApp', ['ngMessages'])
 
 		// Submit
 		$scope.submit = function(){
-			console.log("Submit!");
+			// console.log("Submit!");
 			// Process button click, show error if validation is not true
-			if ($scope.userForm.$valid == false){
+			if (userForm.$valid == false){
 				$scope.inputValid = "";
 			} else {
 				$scope.inputValid = "true";
 			}
-
+// $scope.inputValid = "true";			
 		};
 
 		// Reset form
@@ -52,8 +52,8 @@ angular.module('myApp', ['ngMessages'])
 			$scope.maleFemale();
 			
 			// Reset form
-			$scope.userForm.$setPristine();
-			$scope.userForm.$setUntouched();
+			userForm.$setPristine();
+			userForm.$setUntouched();
 
 			// Show input form again
 			$scope.inputValid = "";

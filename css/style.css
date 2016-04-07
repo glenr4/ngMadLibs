@@ -72,8 +72,88 @@ input[type=text], input[type=number] {
 
 /*Styling*/
 .border {
+	
 	border: 1px solid black;
+	max-height: 100%;
 }
+
+/* there is no need to define anything inside of the destination
+CSS class since the keyframe will take charge of the animation */
+#text-area.ng-leave {
+  animation: my_fade_animation 0.5s linear;
+  -webkit-animation: my_fade_animation 0.5s linear;
+}
+
+@keyframes my_fade_animation {
+  from { opacity:1; 
+  		max-height: 500px;}
+  to { opacity:0; 
+  		max-height: 0px;}
+}
+
+@-webkit-keyframes my_fade_animation {
+  from { opacity:1; 
+  		max-height: 500px;}
+  to { opacity:0; 
+  		max-height: 0px;}
+}
+
+#text-area.ng-enter {
+  animation: my_show_animation 1s linear;
+  -webkit-animation: my_show_animation 1s linear;
+}
+
+@keyframes my_show_animation {
+  from { opacity:0;
+  		max-height: 0; }
+  to { opacity:1; 
+  		max-height: 500px;}
+}
+
+@-webkit-keyframes my_show_animation {
+  from { opacity:0; 
+  			max-height: 0;}
+  to { opacity:1; 
+  		max-height: 500px;}
+}
+
+
+
+
+
+
+/*.border.ng-hide {
+	animation: hide-text 2s linear;
+}
+
+@keyframes hide-text {
+	from {opacity: 1;}
+	to {opacity: 0;}
+}
+*/
+
+
+/*.border.ng-hide-add, .border.ng-hide-add-active {
+	
+	transition: 2s linear all;
+}
+
+.border.ng-hide {
+	opacity: 0;
+	height: 0%;
+
+}*/
+
+/*CSS class-based animations*/
+/*.fade-class.ng-hide {
+  transition:0.5s linear all;
+  opacity:0;
+}*/
+
+/*.fade-class {
+  transition:0.5s linear all;
+  opacity:1;
+}*/
 
 .u-line {
 	text-decoration: underline;
