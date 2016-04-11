@@ -32,7 +32,7 @@
 				<div class="row-text">
 					<ul class="inputField">
 						<li>
-							<input type="text" name="maleName" required ng-model="maleName" class="border" placeholder={{maleNamePlace}} ng-class="{ 'input-error': userForm.$submitted && userForm.maleName.$invalid }">
+							<input type="text" name="maleName" required ng-model="maleName" ng-model-options="{updateOn: 'submit'}" class="border" placeholder={{maleNamePlace}} ng-class="{ 'input-error': userForm.maleName.$invalid }">
 						</li>
 						<li>
 							<div class="inputFieldError" ng-messages="userForm.maleName.$error" ng-if="userForm.$submitted">
