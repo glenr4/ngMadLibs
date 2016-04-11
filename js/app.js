@@ -1,13 +1,10 @@
 angular.module('myApp', ['ngMessages', 'ngAnimate'])
 	.controller('myCtrl', function($scope){
 
-		$scope.male = true;	// radio button needs a string not a boolean
+		$scope.male = true;
 
 		// Swap between male and female terms
 		$scope.maleFemale = function(){
-			//var isMale = $scope.$eval($scope.male);
-
-			//if (isMale){
 			if ($scope.male){
 				$scope.maleNamePlace = 'Male name';
 				$scope.heShe = 'he';
