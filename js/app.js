@@ -1,13 +1,14 @@
 angular.module('myApp', ['ngMessages', 'ngAnimate'])
 	.controller('myCtrl', function($scope){
 
-		$scope.male = "true";	// radio button needs a string not a boolean
+		$scope.male = true;	// radio button needs a string not a boolean
 
 		// Swap between male and female terms
 		$scope.maleFemale = function(){
-			var isMale = $scope.$eval($scope.male);
+			//var isMale = $scope.$eval($scope.male);
 
-			if (isMale){
+			//if (isMale){
+			if ($scope.male){
 				$scope.maleNamePlace = 'Male name';
 				$scope.heShe = 'he';
 				$scope.hisHer = 'his';
@@ -22,12 +23,7 @@ angular.module('myApp', ['ngMessages', 'ngAnimate'])
 
 		// Submit
 		$scope.submit = function(){
-			// Process button click, show error if validation is not true
-			if ($scope.userForm.$valid == false){
-				$scope.inputValid = "";
-			} else {
-				$scope.inputValid = "true";
-			}		
+			$scope.showTextArea = true;
 		};
 
 		// Reset form
@@ -44,7 +40,7 @@ angular.module('myApp', ['ngMessages', 'ngAnimate'])
 			$scope.adjective = "";
 
 			// Reset radio button
-			$scope.male = "true";
+			$scope.male = true;
 			$scope.maleFemale();
 			
 			// Reset form
@@ -52,13 +48,13 @@ angular.module('myApp', ['ngMessages', 'ngAnimate'])
 			$scope.userForm.$setUntouched();
 
 			// Show input form again
-			$scope.inputValid = "";
+			$scope.showTextArea = false;
 		};
 
 
 		// Initialise variables
 		$scope.maleFemale();
-		$scope.inputValid = "";
+		$scope.showTextArea = false;
 	});
 
 
